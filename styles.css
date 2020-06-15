@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 80vh;
+  display: block;
+  background: #eb551b;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	/*overflow:hidden; /* Eliminamos errores de float */
+  background:#3cf04b;
+  margin-bottom: 2%;
+}
+
+.wrapper {
+	width:90%; /* Establecemos que el ancho sera del 90% */
+	max-width:1000px; /* Aqui le decimos que el ancho máximo sera de 1000px */
+	margin:auto; /* Centramos los elementos */
+  overflow:hidden; /* Eliminamos errores de float */
+  
+}
+ 
+header .intentos {
+	color:#000000;
+	font-size:5vh;
+  line-height:70px;
+  max-height: 70px;
+  float:right;
+}
+header nav {
+	float:left;
+  line-height: 40px;
+  padding-top: 1vh;
+}
+ 
+header nav a {
+  padding-right: 10vw;
+	display:inline-block;
+  color:#fff;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+	text-decoration:none;
+	padding:10px 20px;
+	line-height:normal;
+	font-size:5vh;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+ 
+header nav a:hover {
+	background:#f56f3a;
+	border-radius:5px;
+}
+
+.memory-game {
+  width: 90vw;
+  height: 80vh;
+  position: relative;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+}
+.confettiCanvas{
+  position: fixed;
+  margin-top: 10vh;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  }
+footer {
+  text-align: center;
+  position: bottom;
+  font-size: 12;
+  font-style: oblique;
+  border: chartreuse;
+  text-shadow: chartreuse;
+}
+
+.memory-card {
+  width: calc(23% - 10px);
+  height: calc(33% - 10px);
+  margin-left: 1vw;
+  margin-right: 1vw;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+  box-shadow: 3px 4px 5px rgba(0,0,0,.3);
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.memory-card.flip {
+  transform: rotateY(-180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  border-radius: 8px;
+  background: #21b314;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+}
+.back-face:hover{
+  background-color: #57ca4c;
+  margin-top: 2px;
+}
+
+/* ########################################*/
+
+@media only screen and (max-width: 900px) {
+
+.memory-game {
+  width: 100%;
+  height: 90%;
+  padding-left: 6vw;
+}
+.memory-card {
+  width: calc(30% - 8px);
+  height: calc(19% - 8px);
+  margin: 4px;
+}
+
+header {
+	width:100%; /* Establecemos que el header abarque el 100% del documento */
+	/*overflow:hidden; /* Eliminamos errores de float */
+  background:#3cf04b;
+  margin-bottom: 5%;
+}
+
+header .intentos {
+	color:#000000;
+	font-size:4vw;
+  line-height:10vh;
+  max-height: 25px;
+  float:right;
+}
+header nav {
+	float:left;
+  line-height: 8vh;
+  padding-top: 1vh;
+}
+header nav a {
+	font-size:3vw;
+	font-weight:bold;
+	-webkit-transition:all 500ms ease;
+	-o-transition:all 500ms ease;
+	transition:all 500ms ease;
+}
+
+}
+
+@media only screen and (max-height: 600px) {
+
+  body {
+    height: 80vh;
+    width: 85vw;
+  }
+
+  header {
+    width: 100vw;
+    margin-bottom: 5px;
+  }
+.memory-game {
+    width: 100%;
+    height: 90%;
+   padding-left: 12vw;
+}
+.memory-card {
+  width: calc(25% - 8px);
+  height: calc(33% - 8px);
+  margin: 4px;
+}
+.confettiCanvas{
+  margin-top: 16vh;
+}
+}
